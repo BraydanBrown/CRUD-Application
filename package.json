@@ -3,18 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "description": "CRUD NodeJS application using ExpressJS, MongoDB/Mongoose, and EJS.",
-  "main": "app.js",
+  "main": "./bin/www",
   "author": "Braydan Brown",
   "license": "ISC",
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "bootstrap": "^5.2.2",
+    "connect": "^3.7.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "ejs": "~2.6.1",
+    "ejs": "^3.1.8",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jquery": "^3.6.1",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.1",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.20"
   }
