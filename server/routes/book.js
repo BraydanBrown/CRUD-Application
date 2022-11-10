@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
             return console.error(err);
         }
         else {
-            console.log(bookList);
+            // console.log(bookList);
             res.render('book/list', {
                 title:'Book List', 
                 bookList: bookList
@@ -28,14 +28,15 @@ router.get('/', (req, res, next) => {
 
 // ADD OPERATION
 // get route for displaying the Add-Page Content
-router.get('/add', (req, res, next) => {
-    res.render('book/add', {
-        title: 'Add Book'
-    });
-});
+
+// router.get('/add', (req, res, next) => {
+//     res.render('book/add', {
+//         title: 'Add Book'
+//     });
+// });
 
 // post route for processing the Add-Page Content
-router.post('/add', (req, res, next) => {
+router.post('/', (req, res, next) => {
     let newBook = book({
         "name": req.body.name,
         "author": req.body.author,
@@ -49,7 +50,7 @@ router.post('/add', (req, res, next) => {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/book-list'); // res.redirect(book/list);
+            res.redirect('/book-list');
         }
     });
 });
@@ -99,7 +100,7 @@ router.post('/edit/:id', (req, res, next) => {
 // get route deleting content
 router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
-    book.remove({_id: id}, (err) => {
+    book.deleteOne({_id: id}, (err) => {
         if(err) {
             console.log(err);
             res.end(err);
