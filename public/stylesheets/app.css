@@ -39,7 +39,6 @@ body {
   width: 100%;
   resize: none;
   background-color: white;
-  font: 14px/14px Arial, sans-serif;
   padding: 10px;
 }
 
@@ -57,14 +56,13 @@ body {
   outline: none;
 }
 
-#contact button {
+/* #contact button {
   display: inline-block;
   text-align: center;
   width: 100%;
   border: none;
   background-color: #0D6EFD;
   color: white;
-  /* color: black; */
   cursor: pointer;
   font-size: 18px;
   height: 35px;
@@ -73,12 +71,12 @@ body {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   font-weight: 500;
-}
+} */
 
-#contact button:hover {
+/* #contact button:hover {
   background-color: #0098E6;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
-}
+} */
 
 #contact ul {
   list-style: none;
@@ -95,15 +93,14 @@ body {
   border-color: rgba(192, 192, 192);
 }
 
-#splash-button {
+/* #splash-button {
   background: #536F8F;
   border-color: var(--bs-secondary);
-  /* border-color: var(--bs-white); */
 }
 
 #splash-button:hover {
   background: var(--bs-btn-hover-bg);
-}
+} */
 
 .nav-link.active {
   color: #02040f!important;

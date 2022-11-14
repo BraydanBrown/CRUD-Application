@@ -29,14 +29,14 @@ router.get('/', (req, res, next) => {
 // ADD OPERATION
 // get route for displaying the Add-Page Content
 
-// router.get('/add', (req, res, next) => {
-//     res.render('book/add', {
-//         title: 'Add Book'
-//     });
-// });
+router.get('/add', (req, res, next) => {
+    res.render('book/add', {
+        title: 'Add Book'
+    });
+});
 
 // post route for processing the Add-Page Content
-router.post('/', (req, res, next) => {
+router.post('/add', (req, res, next) => {
     let newBook = book({
         "name": req.body.name,
         "author": req.body.author,
@@ -59,7 +59,6 @@ router.post('/', (req, res, next) => {
 // get route for processing the Edit-Page Content
 router.get('/edit/:id', (req, res, next) => {
     let id = req.params.id;
-
     book.findById(id, (err, bookToEdit) => {
         if(err) {
             console.log(err);
@@ -77,7 +76,7 @@ router.get('/edit/:id', (req, res, next) => {
 // post route for processing the Edit-Page Content
 router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id;
-    let updatedBook = book({
+    let updateBook = book({
         "_id": id,
         "name": req.body.name,
         "author": req.body.author,
@@ -86,7 +85,7 @@ router.post('/edit/:id', (req, res, next) => {
         "price": req.body.price
     });
 
-    book.updateOne({_id: id}, updatedBook, (err) => {
+    book.updateOne({_id: id}, updateBook, (err) => {
         if(err) {
             console.log(err);
             res.end(err);

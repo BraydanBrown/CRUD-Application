@@ -1,7 +1,7 @@
 <!--NavBar -->
-<nav class="navbar navbar-expand-lg py-3"> <!-- bg-light bg-opacity-25 -->
+<nav class="navbar navbar-expand-lg py-3 border-bottom border-secondary"> <!-- bg-light bg-opacity-25 -->
     <div class="container">
-      <a class="navbar-brand" href="/">Braydan</a>
+      <a class="navbar-brand" href="/">CRUD Application</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,11 +18,11 @@
           </li>
 
           <li class="nav-item">
-            <% if (title == "CRUD") { %>
-              <a class="nav-link active" href="/crud">
+            <% if (title == "Book List") { %>
+              <a class="nav-link active" href="/book-list">
             <% } else { %>
-              <a class="nav-link" href="/crud">
-            <% } %> Second Item</a>
+              <a class="nav-link" href="/book-list">
+            <% } %> Database</a>
           </li>
 
           <li class="nav-item">
