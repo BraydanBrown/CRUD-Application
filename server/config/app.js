@@ -22,7 +22,7 @@ mongDB.once('open', ()=> {
 //Add new router modules
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let booksRouter = require('../routes/book');
+let assignmentsRouter = require('../routes/assignment');
 
 
 let app = express();
@@ -42,8 +42,8 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//BOOK LIST ROUTE, DISPLAYS BOOK LIST DATABASE
-app.use('/book-list', booksRouter); //localhost:3000/index/book-list
+//assignment LIST ROUTE, DISPLAYS assignment LIST DATABASE
+app.use('/assignment-list', assignmentsRouter); //localhost:3000/index/assignment-list
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

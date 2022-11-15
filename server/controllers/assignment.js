@@ -3,59 +3,59 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 //connect with database model
-let book = require('../models/books');
+let assignment = require('../models/assignments');
 
 /* CRUD Operations */
 module.exports.displayDatabase = (req, res, next) => {
-    book.find((err, bookList) => {
+    assignment.find((err, assignmentsList) => {
         if(err) {
             return console.error(err);
         }
         else {
-            // console.log(bookList);
-            res.render('book/list', {
-                title:'Book List', 
-                bookList: bookList
+            // console.log(assignmentsList);
+            res.render('assignment/list', {
+                title:'Assignment List', 
+                assignmentsList: assignmentsList
             });
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {
-        title: 'Add Book' 
+    res.render('assignment/add', {
+        title: 'Add Assignment' 
     });
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newBook = book({
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
+    let newAssignment = assignment({
+        "course": req.body.course,
+        "title": req.body.title,
         "description": req.body.description,
-        "price": req.body.price
+        "weight": req.body.weight,
+        "due": req.body.due
     });
 
-    book.create(newBook, (err, book) => {
+    assignment.create(newAssignment, (err, assignment) => {
         if(err) {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/book-list');
+            res.redirect('/assignment-list');
         }
     });
 }
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
-    book.findById(id, (err, bookToEdit) => {
+    assignment.findById(id, (err, assignmentToEdit) => {
         if(err) {
             console.log(err);
             res.end(err);
         } else {
-            res.render('book/edit', {
-                title: 'Edit Book',
-                book: bookToEdit
+            res.render('assignment/edit', {
+                title: 'Edit assignment',
+                assignment: assignmentToEdit
             });
         }
     });
@@ -63,33 +63,33 @@ module.exports.displayEditPage = (req, res, next) => {
 
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
-    let updateBook = book({
+    let updateAssignment = assignment({
         "_id": id,
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
+        "course": req.body.course,
+        "title": req.body.title,
         "description": req.body.description,
-        "price": req.body.price
+        "weight": req.body.weight,
+        "due": req.body.due
     });
 
-    book.updateOne({_id: id}, updateBook, (err) => {
+    assignment.updateOne({_id: id}, updateAssignment, (err) => {
         if(err) {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/book-list'); // res.redirect(book/list);
+            res.redirect('/assignment-list'); // res.redirect(assignment/list);
         }
     });
 }
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    book.deleteOne({_id: id}, (err) => {
+    assignment.deleteOne({_id: id}, (err) => {
         if(err) {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/book-list'); // res.redirect(book/list);
+            res.redirect('/assignment-list'); // res.redirect(assignment/list);
         }
     });
 }

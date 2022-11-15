@@ -7,25 +7,25 @@
     
         <!-- <div class="container mt-5">
 
-            <form action="insert book" method="POST">
+            <form action="insert assignment" method="POST">
                 <div class="mb-5">
                     <label for="name" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Book Name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="assignment Name">
                 </div>
             </form>
 
         </div> -->
 
-        <!-- DISPLAYS "books" COLLECTION -->
-        <div class="container bg-dark border rounded border-0 p-4 p-md-5 bg-opacity-25">
+        <!-- DISPLAYS "assignments" COLLECTION -->
+        <div class="container bg-dark border rounded border-0 p-4 p-md-5 bg-opacity-100">
 
             <h1 style="color: var(--bs-white);"><%= title %></h1>
             
             <!-- Trigger Modal -->
-            <!-- <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add Book</button>
-            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add Book</button> -->
+            <!-- <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add assignment</button>
+            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add assignment</button> -->
 
-            <a href="/book-list/add" class="btn btn-success mb-2" role="button">Add Book</a>
+            <a href="/assignment-list/add" class="btn btn-success mb-2" role="button">Add Assignment</a>
             
             <div class="table-responsive">
 
@@ -33,11 +33,11 @@
                     <thead class="text-center">
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Class</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Author</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Publication Year</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Due Date</th>
                             <th scope="col"><!-- <label class="sr-only visually-hidden">Edit button column</label> --> </th>
                             <th scope="col"><!-- <label class="sr-only visually-hidden">Delete button column</label> --> </th>
                         </tr>
@@ -56,18 +56,18 @@
 
                     <tbody class="text-center align-middle">
 
-                        <% for(let count=0; count < bookList.length; count++) { %>
+                        <% for(let count=0; count < assignmentsList.length; count++) { %>
                         <tr>
                             <!-- display column number -->
                             <td scope="col"><%= count+1 %></th>
-                            <td class="col"><%= bookList[count].name %></td>
-                            <td class="col"><%= bookList[count].author %></td>
-                            <td class="col"><%= bookList[count].description %></td>
-                            <td class="col"><%= bookList[count].published %></td>
-                            <td class="col"><%= bookList[count].price %></td>
+                            <td class="col"><%= assignmentsList[count].course %></td>
+                            <td class="col"><%= assignmentsList[count].title %></td>
+                            <td class="col"><%= assignmentsList[count].description %></td>
+                            <td class="col"><%= assignmentsList[count].weight %></td>
+                            <td class="col"><%= assignmentsList[count].due %></td>
 
-                            <td class="col"><a href="/book-list/edit/<%= bookList[count]._id %>" class="btn btn-primary" role="button">Edit</a></td>
-                            <td class="col"><a href="/book-list/delete/<%= bookList[count]._id %>" class="btn btn-danger" role="button">Delete</a></td>
+                            <td class="col"><a href="/assignment-list/edit/<%= assignmentsList[count]._id %>" class="btn btn-primary" role="button">Edit</a></td>
+                            <td class="col"><a href="/assignment-list/delete/<%= assignmentsList[count]._id %>" class="btn btn-danger" role="button">Delete</a></td>
                                                         
                         </tr>
                         <% } %>
@@ -87,7 +87,7 @@
             
                                 <!-- <form class="form" method="post" id="contact">
             
-                                    <h1>Insert Book</h1>
+                                    <h1>Insert assignment</h1>
             
                                     <ul>
             
