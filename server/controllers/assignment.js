@@ -21,12 +21,14 @@ module.exports.displayDatabase = (req, res, next) => {
     });
 }
 
+// Display add page
 module.exports.displayAddPage = (req, res, next) => {
     res.render('assignment/add', {
         title: 'Add Assignment' 
     });
 }
 
+// Process add page
 module.exports.processAddPage = (req, res, next) => {
     let newAssignment = assignment({
         "course": req.body.course,
@@ -46,6 +48,7 @@ module.exports.processAddPage = (req, res, next) => {
     });
 }
 
+// Display edit page
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
     assignment.findById(id, (err, assignmentToEdit) => {
@@ -61,6 +64,7 @@ module.exports.displayEditPage = (req, res, next) => {
     });
 }
 
+// Process edit page
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
     let updateAssignment = assignment({
@@ -82,6 +86,7 @@ module.exports.processEditPage = (req, res, next) => {
     });
 }
 
+// Perform delete action
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
     assignment.deleteOne({_id: id}, (err) => {

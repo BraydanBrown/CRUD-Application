@@ -16,14 +16,10 @@ mongDB.once('open', ()=> {
   console.log("Connected to MongoDB...");
 });
 
-// //express validator, allows input to be sanitized and validated
-// const { body, validationResult } = require("express-validator");
-
 //Add new router modules
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let assignmentsRouter = require('../routes/assignment');
-
 
 let app = express();
 
@@ -35,7 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../public'))); //.. means go up one directory
+app.use(express.static(path.join(__dirname, '../../public'))); //.. -> go up one directory
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //Add new router modules

@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <li>
                             <input class="form-control" placeholder="Assignment Title" type="text" name="title" id="titleTextField" required>
-                            <label class="visually-hidden" for="nameTextField">Assignment Title</label>
+                            <label class="visually-hidden" for="titleTextField">Assignment Title</label>
                         </li>
                     </div>
     
@@ -33,8 +33,8 @@
     
                     <div class="form-group">
                         <li>
-                            <input class="form-control" placeholder="Weight" type="number" name="weight" id="weightTextField" required>
-                            <label class="visually-hidden" for="publishedTextField">Assignment Weight</label>
+                            <input class="form-control" placeholder="Weight" type="number" min="0" max="100" name="weight" id="weightTextField" required>
+                            <label class="visually-hidden" for="weightTextField">Assignment Weight</label>
                         </li>
                     </div>
                         
@@ -42,12 +42,18 @@
                     <div class="form-group">
                         <li>
                             <input class="form-control" placeholder="Due Date" type="date" name="due" id="dueTextField" required>
-                            <label class="visually-hidden" for="priceTextField">Assignment Due Date</label>
+                            <label class="visually-hidden" for="dueTextField">Assignment Due Date</label>
                         </li>
                     </div>
-    
-                    <button class="btn btn-primary" type="submit" id="form-submit">Submit</button>
-                    <button class="btn btn-danger" type="reset">Reset</button>
+
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i>Submit
+                    </button>
+                
+                    <a href="/assignment-list" class="btn btn-danger">
+                        <i class="fas fa-undo"></i>Cancel
+                    </a>
+
                 </ul>
     
             </form>
