@@ -7,14 +7,14 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29323c', endColorstr='#485563',GradientType=0 ); /* IE6-9 */
 }
 
-#contact-page.container {
+#dbPage.container {
   max-width: 400px;
   width: 100%;
   padding: 5% 0;
   position: relative;
 }
 
-#contact h1 {
+#dbForm h1 {
   display: block;     
   margin-top: 0px;
   margin-bottom: 15px;
@@ -24,7 +24,7 @@ body {
   color: black;
 }
 
-#contact {
+#dbForm {
   background-color: white;
   padding: 5%;
   overflow: hidden;
@@ -32,8 +32,8 @@ body {
   border-radius: 8px;
 }
 
-#contact input,
-#contact textarea {
+#dbForm input,
+#dbForm textarea {
   box-sizing: border-box;
   border: none;
   width: 100%;
@@ -42,21 +42,21 @@ body {
   padding: 10px;
 }
 
-#contact input {
+#dbForm input {
   height: 35px;
 }
 
-#contact textarea {
+#dbForm textarea {
   height: 100px;
 }
 
 
-#contact input:focus,
-#contact textarea:focus {
+#dbForm input:focus,
+#dbForm textarea:focus {
   outline: none;
 }
 
-/* #contact button {
+/* #dbForm button {
   display: inline-block;
   text-align: center;
   width: 100%;
@@ -73,18 +73,18 @@ body {
   font-weight: 500;
 } */
 
-/* #contact button:hover {
+/* #dbForm button:hover {
   background-color: #0098E6;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
 } */
 
-#contact ul {
+#dbForm ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#contact li {
+#dbForm li {
   min-width: 100%;
   border-style: hidden hidden solid;
   border-width: 2px;
@@ -102,14 +102,18 @@ body {
   background: var(--bs-btn-hover-bg);
 } */
 
-.nav-link.active {
-  color: #02040f!important;
+nav .nav-link.active {
+  color: #000000!important;
+}
+
+nav .nav-link, nav .navbar-brand {
+  color: white;
 }
 
 .footer, footer .nav-link.px-2 {
   color: white;
 }
 
-nav .nav-link, nav .navbar-brand {
-  color: white;
+footer .nav-link.px-2:hover {
+  color: #708090;
 }

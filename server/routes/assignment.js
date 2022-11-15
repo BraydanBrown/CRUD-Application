@@ -2,14 +2,14 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-//connect to Book Model
-let book = require('../models/books');
-let databaseController = require('../controllers/book');
+//connect to assignment Model
+let assignment = require('../models/assignments');
+let databaseController = require('../controllers/assignment');
 
 // Read Operation
-// Get route for the book list page - READ Operation
+// Get route for the assignment list page - READ Operation
 
-// router.get("/book/create", book_)
+// router.get("/assignment/create", assignment_)
 
 // READ OPERATION
 router.get('/', databaseController.displayDatabase);
