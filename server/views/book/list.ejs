@@ -17,9 +17,9 @@
         </div> -->
 
         <!-- DISPLAYS "books" COLLECTION -->
-        <div class="container">
+        <div class="container bg-dark border rounded border-0 p-4 p-md-5 bg-opacity-25">
 
-            <h1><%= title %></h1>
+            <h1 style="color: var(--bs-white);"><%= title %></h1>
             
             <!-- Trigger Modal -->
             <!-- <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add Book</button>
@@ -30,7 +30,7 @@
             <div class="table-responsive">
 
                 <table class="table table-hover table-dark">
-                    <thead class="">
+                    <thead class="text-center">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Title</th>
@@ -38,8 +38,8 @@
                             <th scope="col">Description</th>
                             <th scope="col">Publication Year</th>
                             <th scope="col">Price</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
+                            <th scope="col"><!-- <label class="sr-only visually-hidden">Edit button column</label> --> </th>
+                            <th scope="col"><!-- <label class="sr-only visually-hidden">Delete button column</label> --> </th>
                         </tr>
 
                         <!-- <tr class="flex">
@@ -54,7 +54,7 @@
 
                     </thead>
 
-                    <tbody class="text-left align-middle">
+                    <tbody class="text-center align-middle">
 
                         <% for(let count=0; count < bookList.length; count++) { %>
                         <tr>
