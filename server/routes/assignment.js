@@ -4,19 +4,16 @@ let mongoose = require('mongoose');
 
 //connect to assignment Model
 let assignment = require('../models/assignments');
+
+//connect to Controller folder, which has the CRUD functions
 let databaseController = require('../controllers/assignment');
 
-// Read Operation
 // Get route for the assignment list page - READ Operation
-
-// router.get("/assignment/create", assignment_)
-
 // READ OPERATION
 router.get('/', databaseController.displayDatabase);
 
 // ADD OPERATION
 // get route for displaying the Add-Page Content
-
 router.get('/add', databaseController.displayAddPage);
 
 // post route for processing the Add-Page Content
