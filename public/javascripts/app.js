@@ -4,6 +4,7 @@
         console.log("App Started");
     }
     
+    // Event listener, if the delete button is pressed a confirmation message will appear, confirming that the user wants to delete the assignment.
     window.addEventListener("load", Start);
     let deleteButtons = document.querySelectorAll('.btn-danger');
     for (button of deleteButtons) {

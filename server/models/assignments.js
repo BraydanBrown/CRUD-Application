@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-//create an assignment model
+// create an assignment model
 let assignmentModel = mongoose.Schema({
     course: String,
     title: String,

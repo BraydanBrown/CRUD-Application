@@ -1,3 +1,4 @@
+/* Sets the background colour to a gradient. Includes support for multiple browsers. */
 body {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#29323c+0,485563+100 */
   background: #29323c; /* Old browsers */
@@ -18,9 +19,7 @@ body {
   display: block;     
   margin-top: 0px;
   margin-bottom: 15px;
-  /* font-family: Arial, sans-serif; */
   font-weight: 400;
-  /* color: rgb(124, 124, 124); */
   color: black;
 }
 
@@ -50,33 +49,10 @@ body {
   height: 100px;
 }
 
-
 #dbForm input:focus,
 #dbForm textarea:focus {
   outline: none;
 }
-
-/* #dbForm button {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  border: none;
-  background-color: #0D6EFD;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  height: 35px;
-  line-height: 0px;
-  padding: 10px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
-  font-weight: 500;
-} */
-
-/* #dbForm button:hover {
-  background-color: #0098E6;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
-} */
 
 #dbForm ul {
   list-style: none;
@@ -93,17 +69,8 @@ body {
   border-color: rgba(192, 192, 192);
 }
 
-/* #splash-button {
-  background: #536F8F;
-  border-color: var(--bs-secondary);
-}
-
-#splash-button:hover {
-  background: var(--bs-btn-hover-bg);
-} */
-
 nav .nav-link.active {
-  color: #000000!important;
+  color: #ffffff!important;
 }
 
 nav .nav-link, nav .navbar-brand {

@@ -81,7 +81,7 @@ module.exports.processEditPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/assignment-list'); // res.redirect(assignment/list);
+            res.redirect('/assignment-list');
         }
     });
 }
@@ -94,7 +94,7 @@ module.exports.performDelete = (req, res, next) => {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/assignment-list'); // res.redirect(assignment/list);
+            res.redirect('/assignment-list');
         }
     });
 }
