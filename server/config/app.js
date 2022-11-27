@@ -4,6 +4,7 @@ let mongoose = require('mongoose');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+require('dotenv').config({silent: true})
 
 //config mongoDB
 const uri = process.env.URI;
