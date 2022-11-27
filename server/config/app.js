@@ -1,15 +1,17 @@
 let createError = require('http-errors');
 let express = require('express');
+let mongoose = require('mongoose');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+require('dotenv').config();
 
 //config mongoDB
-let mongoose = require('mongoose');
-let DB = require('./db');
+const uri = process.env.URI;
 
 //point mongoose to DB URI
-mongoose.connect(DB.URI);
+mongoose.connect(uri);
+
 let mongDB = mongoose.connection;
 mongDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongDB.once('open', ()=> {
